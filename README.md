@@ -9,53 +9,25 @@
 </p>
 
 Welcome to **MarkLens** ✨!
-This is a VS Code extension that gives you a beautiful, GitHub-style Markdown preview.
 
-## 1. How to Test It Locally
-1. Inside VS Code, make sure this `MarkLens` folder is open.
-2. Press **`F5`** on your keyboard.
-3. A new "Extension Development Host" window will open.
-4. In that new window, open any `.md` file (like this `README.md`).
-5. Look at the **top-right** corner of the editor window. You should see an icon (a preview icon).
-6. Click it! A webview panel will open beside your editor showing the GitHub-styled preview of your Markdown file.
-7. Try editing this text—it will automatically update in the preview panel!
+**MarkLens** is a lightweight, powerful Visual Studio Code extension that provides a beautiful, authentic GitHub-style Markdown preview natively inside your editor.
 
-## 2. GitHub Markdown Features
+## ✨ Features
 
-MarkLens supports all standard GitHub Markdown features:
+- **GitHub-Style Preview**: Renders your Markdown files exactly how they will appear on GitHub, matching typography, tables, and colors perfectly.
+- **Side-by-Side Split View**: Click the dedicated toolbar button to instantly open the preview seamlessly beside your active editor.
+- **Live Auto-Updates**: The preview automatically and instantly synchronizes as you type, giving you real-time visual feedback on your Markdown.
+- **Rich Markdown Support**: Fully supports all standard Markdown elements, including syntax-highlighted code snippets, tables, blockquotes, and task checklists.
 
-### Code Snippets
+## 👨‍💻 Developed by
 
-```javascript
-function greet(name) {
-    console.log(`Hello, ${name}!`);
-}
-greet("World");
-```
-
-### Tables
-
-| Feature | Status |
-|---|---|
-| Split View | ✅ Working |
-| GitHub Style | ✅ Working |
-| Auto Update | ✅ Working |
-
-### Lists and Tasks
-* [x] Scaffold the extension
-* [x] Add GitHub custom CSS
-* [x] Package into a VSIX file for distribution
-
-### Blockquotes
-> This is a blockquote. It looks just like GitHub's!
+**Yusuf M.abdi** - [https://yusuf-abdi.vercel.app/](https://yusuf-abdi.vercel.app/)
 
 ---
 
-## 3. How to Package (Create a file for Marketplace/Sharing)
+## 🚀 How to Use
 
-To share this extension with your friends or install it normally on your machine:
-1. Run `npx @vscode/vsce package` in your terminal.
-2. This generates a `.vsix` file.
-3. To install it, open the Extensions view in VS Code (`Ctrl+Shift+X`), click the `...` menu at the top right, and select **"Install from VSIX..."**.
-
-Enjoy using MarkLens!
+1. Open any `.md` file in VS Code.
+2. Look at the **top-right** corner of the editor window. You should see the MarkLens preview icon.
+3. Click it! A webview panel will open beside your editor showing the GitHub-styled preview of your Markdown file.
+4. Edit your text, and watch it automatically update in the preview panel!
