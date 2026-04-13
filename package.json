@@ -1,13 +1,13 @@
 {
   "name": "marklens",
-  "displayName": "MarkLens: GitHub Markdown Preview",
+  "displayName": "MarkLens",
   "description": "A GitHub-style Markdown preview extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "Mark_lens.png",
   "publisher": "MarkLens",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MarkLens/marklens.git"
+    "url": "https://github.com/yousumohamed/Mark-Lens.git"
   },
   "engines": {
     "vscode": "^1.80.0"

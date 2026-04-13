@@ -11,14 +11,15 @@ export class MarkLensPanel {
   private _currentDocumentUri: vscode.Uri | undefined;
 
   public static createOrShow(extensionUri: vscode.Uri) {
-    const column = vscode.window.activeTextEditor
-      ? vscode.ViewColumn.Beside
-      : vscode.ViewColumn.One;
+    const activeEditor = vscode.window.activeTextEditor;
+    const document = activeEditor && activeEditor.document.languageId === 'markdown' ? activeEditor.document : undefined;
+
+    const column = activeEditor ? vscode.ViewColumn.Beside : vscode.ViewColumn.One;
 
     // If we already have a panel, show it.
     if (MarkLensPanel.currentPanel) {
-      MarkLensPanel.currentPanel._panel.reveal(column);
-      MarkLensPanel.currentPanel.update();
+      MarkLensPanel.currentPanel._panel.reveal(column, true); // preserve focus
+      MarkLensPanel.currentPanel.update(document);
       return;
     }
 
@@ -26,26 +27,26 @@ export class MarkLensPanel {
     const panel = vscode.window.createWebviewPanel(
       MarkLensPanel.viewType,
       'Markdown Preview',
-      column,
+      { viewColumn: column, preserveFocus: true },
       {
         enableScripts: true,
         localResourceRoots: [extensionUri]
       }
     );
 
-    MarkLensPanel.currentPanel = new MarkLensPanel(panel, extensionUri);
+    MarkLensPanel.currentPanel = new MarkLensPanel(panel, extensionUri, document);
   }
 
   public static revive(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
     MarkLensPanel.currentPanel = new MarkLensPanel(panel, extensionUri);
   }
 
-  private constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri) {
+  private constructor(panel: vscode.WebviewPanel, extensionUri: vscode.Uri, document?: vscode.TextDocument) {
     this._panel = panel;
     this._extensionUri = extensionUri;
 
     // Set the webview's initial html content
-    this.update();
+    this.update(document);
 
     // Listen for when the panel is disposed
     this._panel.onDidDispose(() => this.dispose(), null, this._disposables);

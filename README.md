@@ -1,7 +1,11 @@
 # MarkLens Extension
 
 <p align="center">
-  <img src="Mark_lens.png" width="200" alt="MarkLens Icon">
+  <img src="https://raw.githubusercontent.com/yousumohamed/Mark-Lens/main/Mark_lens.png" width="200" alt="MarkLens Icon">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yousumohamed/Mark-Lens/main/Mark%20lens.gif" alt="MarkLens Instructions">
 </p>
 
 Welcome to **MarkLens** ✨!
