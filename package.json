@@ -1,0 +1,58 @@
+{
+  "name": "marklens",
+  "displayName": "MarkLens: GitHub Markdown Preview",
+  "description": "A GitHub-style Markdown preview extension",
+  "version": "0.0.1",
+  "icon": "Mark_lens.png",
+  "publisher": "MarkLens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkLens/marklens.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "marklens.showPreview",
+        "title": "Open MarkLens Preview",
+        "icon": {
+          "light": "resources/preview-icon.svg",
+          "dark": "resources/preview-icon.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == markdown",
+          "command": "marklens.showPreview",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "18.x",
+    "@types/marked": "^5.0.1",
+    "typescript": "^5.1.3",
+    "ts-loader": "^9.4.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "marked": "^7.0.4"
+  }
+}
